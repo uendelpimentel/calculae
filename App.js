@@ -1,20 +1,73 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+
+
+
+    <View style={estilos.container}>
+
+<Image source={require('./assets/logo.png')} />
+
+
+      <Text style={estilos.texto}>
+        Login
+      </Text> 
+      <TextInput 
+        style={estilos.input}/> 
+
+
+   
+
+      <Text style={estilos.texto}>
+        Senha
+      </Text> 
+      <TextInput 
+        style={estilos.input}
+        secureTextEntry={true}/>
+
+    
+
+      <TouchableOpacity style={estilos.button}>
+        <Text>
+          Entrar
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={estilos.button}>
+        <Text>
+          Cadastro
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const estilos = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#0cc',
     alignItems: 'center',
     justifyContent: 'center',
+    gap: 8
   },
+  texto:{
+    color: "#000",
+    fontSize: 12
+  },
+  input:{
+    borderWidth: 1,
+    paddingHorizontal: 8,
+    paddingVertical: 8,
+    borderRadius: 8,
+    width:"80%"
+  },
+  button:{
+    backgroundColor: "#fff",
+    paddingHorizontal: 24,
+    paddingVertical: 8,
+    borderRadius: 8
+  }
 });
+
+
